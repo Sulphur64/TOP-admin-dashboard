@@ -40,14 +40,13 @@ body{
         
         display: flex;
         flex-direction: column;
-        gap: 1rem;
-        padding-left: 1rem;
-        padding-top: 1rem;
+        gap: var(--padding-default);
+        padding: var(--padding-default);
     }
         .nav div{
             display: flex;
             align-items: center;
-            gap: 1rem;
+            gap: var(--padding-default)
         }
 
         .nav svg{
@@ -72,12 +71,27 @@ body{
         .small-profile{
             display: flex;
             align-items: center;
-            padding: 1rem;
-            gap: 1rem;
+            padding: var(--padding-default);
+            gap: var(--padding-default);
         }
 
         .big-profile{
             display: grid;
+            grid-template-columns: 60px 1fr;
+            grid-template-rows: repeat(2, 1fr);
+            align-items: end;
+            grid-column-gap: var(--padding-default);
+            grid-row-gap: calc(var(--padding-default)/2);
+            padding: var(--padding-default);
+        }
+
+        .big-profile div+p{
+            font-weight: bold;
+        }
+
+        .big-profile div{
+            grid-row: 1/-1;
+            align-self: center;
         }
 
         .small-profile div,
@@ -102,7 +116,21 @@ body{
 
         .header-social{
             display: flex;
-            gap: 1rem;
+            flex-grow: 0;
+            gap: var(--padding-default);
+
+            place-self: center center;
+        }
+
+        .header-social button{
+            all: unset;
+            cursor: pointer;
+            color: var(--color-theme-text-menu);
+            background-color: var(--color-theme-primary);
+            padding: 0.4rem 1rem;
+            border-radius: var(--padding-default);
+            max-width: 150px;
+            max-height: 1.8rem;
         }
 
     .content{
@@ -131,7 +159,7 @@ body{
                 display: grid;
                 grid-template-columns: 0.5rem 1fr;
                 grid-template-rows: repeat(4, auto);
-                grid-gap: 0.5rem;
+                grid-gap: calc(var(--padding-default)/2);
             }
 
              .card p{
@@ -151,9 +179,9 @@ body{
                 
                 display: flex;
                 justify-content: end;
-                gap: 2rem;
-                padding-right: 1.5rem;
-                padding-bottom: 1rem;
+                gap: calc(var(--padding-default)*2);
+                padding-right: calc(var(--padding-default)*1.5);
+                padding-bottom: var(--padding-default);
             }
 
             .card-social svg{
@@ -162,6 +190,29 @@ body{
 
     .sidebar{
         background-color: var(--color-theme-tertiary);
-
+        
         grid-area: 2/3/-1/-1;
     }
+
+        .sidebar h1{
+            padding: var(--padding-default);
+        }
+
+        .announcements{
+            background-color: var(--color-theme-secondary);
+            border-radius: var(--border-radius-primary);
+            padding: var(--padding-default);
+
+            display: flex;
+            flex-direction: column;
+
+            grid-gap: calc(var(--padding-default)/2);
+
+        }
+        
+
+
+        .announcements .card{
+            max-height: 6rem;
+            overflow: hidden;
+        }
