@@ -96,7 +96,8 @@ body{
 
         .small-profile div,
         .big-profile div{
-            background-color: pink;
+            background:url(./resources/thammer.jpg);
+            background-size: contain;
             border-radius: 50%;
             height: 60px;
             width: 60px;
@@ -215,4 +216,20 @@ body{
         .announcements .card{
             max-height: 6rem;
             overflow: hidden;
+        }
+
+        .trending .small-profile:nth-of-type(1) div{
+            background-image: url(./resources/allfather.jpg);
+        }
+
+        .trending .small-profile:nth-of-type(2) div{
+            background-image: url(./resources/thammer.jpg);
+        }
+
+        .trending .small-profile:nth-of-type(3) div{
+            background-image: url(./resources/brokkr.jpg);
+        }
+
+        .trending .small-profile:nth-of-type(4) div{
+            background-image: url(./resources/eitri.jpg);
         }
